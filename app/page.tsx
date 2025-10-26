@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { Camera, Sparkles, Users, Heart, ShoppingBag, TrendingUp, Star, CheckCircle, ArrowRight } from "lucide-react";
+import { Upload, Search, ShoppingBag, Brain, Users, Store, MessageCircle, Heart, CheckCircle, Sparkles } from "lucide-react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -17,76 +17,68 @@ export default function Home() {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  const features = [
+  const howItWorks = [
     {
-      icon: Camera,
-      title: "חיפוש חזותי AI",
-      description: "צלמי צילום מסך ומצאי את הפריטים המדויקים תוך שניות"
+      icon: Upload,
+      emoji: "🩱",
+      title: "העלי תמונה",
+      description: "העלי תמונה של לוק שאהבת"
     },
     {
-      icon: Users,
-      title: "תוכן משפיענים",
-      description: "גלי סטייל מהאנשים שאת הכי סומכת עליהם"
-    },
-    {
-      icon: Heart,
-      title: "ארון וירטואלי",
-      description: "שמרי את הפריטים האהובים עלייך למעקב עתידי"
-    },
-    {
-      icon: Sparkles,
-      title: "פיד מותאם אישית",
-      description: "המלצות המותאמות בדיוק לסטייל שלך"
-    },
-    {
-      icon: Users,
-      title: "קהילת אופנה",
-      description: "שתפי דעות וקבלי חוות דעת על כל פריט"
+      icon: Search,
+      emoji: "🔍",
+      title: "מצאי התאמות",
+      description: "המערכת מזהה את הבגדים"
     },
     {
       icon: ShoppingBag,
-      title: "קניה ישירה",
-      description: "מהשראה לרכישה בכמה קליקים בלבד"
+      emoji: "💸",
+      title: "קני בקליק",
+      description: "קני בלחיצה אחת"
     }
   ];
 
-  const stats = [
-    { value: "50+", label: "משתמשות מוקדמות" },
-    { value: "AI", label: "טכנולוגיית חיפוש מתקדמת" },
-    { value: "24/7", label: "זמינות מלאה" }
+  const whyMesh = [
+    {
+      icon: Brain,
+      emoji: "🧠",
+      title: "חכמה באמת",
+      description: "מבוססת בינה מלאכותית שלומדת את הסטייל שלך"
+    },
+    {
+      icon: Users,
+      emoji: "👯‍♀️",
+      title: "קהילתית",
+      description: "רואה מה אחרות אוהבות ולומדת מזה"
+    },
+    {
+      icon: Store,
+      emoji: "🛍️",
+      title: "מכל החנויות",
+      description: "Zara, Bershka, Shein, Pull&Bear ועוד"
+    },
+    {
+      icon: MessageCircle,
+      emoji: "💬",
+      title: "מקום לדבר על אופנה",
+      description: "כל פריט מקבל תגובות, שיתופים ודעות אמיתיות"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white" dir="rtl">
+    <div className="min-h-screen bg-white" dir="rtl">
+      <style jsx global>{`
+        * {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+      `}</style>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-rose-400/20 to-pink-500/20 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-            className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tl from-purple-400/20 to-rose-500/20 rounded-full blur-3xl"
-          />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20 bg-gradient-to-b from-white to-pink-50/30">
+        {/* Background decoration */}
+        <div className="absolute inset-0 overflow-hidden opacity-40">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-rose-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 w-full">
@@ -96,18 +88,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            {/* Logo/Brand */}
+            {/* Logo */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="mb-12"
+              className="mb-16"
             >
-              <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight">
-                <span className="bg-gradient-to-l from-rose-700 via-rose-600 to-pink-600 bg-clip-text text-transparent">
-                  MESH
-                </span>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
+                MESH
               </h1>
+              <div className="w-20 h-1 bg-rose-600 mx-auto rounded-full" />
             </motion.div>
 
             {/* Main Headline */}
@@ -115,83 +106,62 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight px-4"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight px-4"
             >
-              ראית אאוטפיט ברשת?
+              מצאי בגדים שאת אוהבת.
               <br />
-              <span className="text-rose-700">כל הפרטים במקום אחד</span>
+              בדרך שאת אוהבת.
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-16 max-w-4xl mx-auto leading-relaxed px-4"
+              className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed px-4 font-light"
             >
-              פלטפורמת גילוי אופנה מבוססת AI שמחברת בין השראת סטייל לקנייה חכמה
+              Mesh היא הפלטפורמה הראשונה שמאפשרת לך לגלות בגדים לפי תמונה — ולראות איפה לקנות אותם, כמה הם עולים, ואיך הם נראים על אחרות.
             </motion.p>
 
-            {/* CTA Form */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="max-w-2xl mx-auto px-4"
+              className="flex justify-center"
             >
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row gap-4 items-stretch">
-                  <Input
-                    type="email"
-                    placeholder="הכניסי את המייל שלך"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 h-16 text-lg sm:text-xl px-8 rounded-full border-2 border-rose-200 focus:border-rose-500 text-right"
-                    required
-                    dir="rtl"
-                  />
-                  <Button
-                    type="submit"
-                    className="h-16 px-10 sm:px-12 bg-gradient-to-l from-rose-700 to-rose-600 hover:from-rose-800 hover:to-rose-700 text-white rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 whitespace-nowrap"
-                  >
-                    הצטרפי לרשימת ההמתנה
-                  </Button>
-                </div>
-              </form>
-              
-              {isSubmitted && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-6 text-green-600 flex items-center justify-center gap-2 text-lg"
-                >
-                  <CheckCircle className="w-6 h-6" />
-                  <span>תודה! נעדכן אותך בקרוב 💕</span>
-                </motion.div>
-              )}
-              
-              <p className="text-base sm:text-lg text-gray-500 mt-6">הצטרפי ל-50+ נשים שכבר נרשמו</p>
+              <Button
+                onClick={() => document.getElementById('waitlist-section')?.scrollIntoView({ behavior: 'smooth' })}
+                className="h-16 px-12 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-xl font-bold shadow-2xl hover:shadow-rose-500/50 transition-all duration-300 flex items-center gap-3"
+              >
+                <Heart className="w-6 h-6" />
+                נסי את Mesh עכשיו
+              </Button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Decorative elements */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-20 grid grid-cols-3 gap-6 sm:gap-10 max-w-3xl mx-auto px-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="mt-16 flex justify-center gap-8 text-gray-500 text-sm"
             >
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-l from-rose-700 to-pink-600 bg-clip-text text-transparent mb-3">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm sm:text-base md:text-lg text-gray-600">{stat.label}</div>
-                </div>
-              ))}
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-rose-500" />
+                <span>חיפוש חכם</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="w-4 h-4 text-rose-500" />
+                <span>קהילתי</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShoppingBag className="w-4 h-4 text-rose-500" />
+                <span>כל החנויות</span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
@@ -204,200 +174,75 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Problem/Solution Section */}
-      <section className="py-20 sm:py-28 px-6 bg-gradient-to-b from-white to-rose-50/50">
+      {/* How It Works Section */}
+      <section className="py-20 sm:py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 sm:mb-20"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 px-4">
-              הדרך הישנה לעומת הדרך של MESH
-            </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto px-4 leading-relaxed">
-              דור Z דורש תשובות מיידיות,לא חיפוש ידני ואיטי
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
-            {/* Old Way */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="order-2 md:order-1"
-            >
-              <Card className="p-8 sm:p-10 bg-gray-50 border-2 border-gray-200 h-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-3xl sm:text-4xl">⌨️</span>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">הדרך הישנה</h3>
-                </div>
-                <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
-                  הקלדת &ldquo;שמלת קורסט אדומה מסאטן&rdquo; מניבה תוצאות לא רלוונטיות וחיפושים נטושים
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-gray-600 text-base sm:text-lg">
-                    <div className="w-2.5 h-2.5 bg-gray-400 rounded-full flex-shrink-0" />
-                    <span>איטי ומתסכל</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-600 text-base sm:text-lg">
-                    <div className="w-2.5 h-2.5 bg-gray-400 rounded-full flex-shrink-0" />
-                    <span>תוצאות לא מדויקות</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-600 text-base sm:text-lg">
-                    <div className="w-2.5 h-2.5 bg-gray-400 rounded-full flex-shrink-0" />
-                    <span>ויתור על הרכישה</span>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex justify-center order-3 md:order-2">
-              <motion.div
-                animate={{ x: [-10, 0, -10] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <ArrowRight className="w-16 h-16 lg:w-20 lg:h-20 text-rose-500" />
-              </motion.div>
-            </div>
-
-            {/* Mesh Way */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="order-1 md:order-3"
-            >
-              <Card className="p-8 sm:p-10 bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 shadow-xl h-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Camera className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-l from-rose-700 to-pink-600 bg-clip-text text-transparent">
-                    הדרך של MESH
-                  </h3>
-                </div>
-                <p className="text-gray-900 text-lg sm:text-xl leading-relaxed font-semibold mb-6">
-                  צילום מסך אחד מוצא את ההתאמה המדויקת תוך שניות, והופך השראה לרכישה
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-rose-700 text-base sm:text-lg">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                    <span className="font-semibold">מיידי ומדויק</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-rose-700 text-base sm:text-lg">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                    <span className="font-semibold">מותאם אישית</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-rose-700 text-base sm:text-lg">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                    <span className="font-semibold">מהשראה לקנייה</span>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 sm:py-28 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16 sm:mb-20"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 px-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               איך זה עובד?
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 px-4">
-              שלושה שלבים פשוטים מהשראה לרכישה
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              העלי תמונה של לוק שאהבת — שמלה, חולצה או אאוטפיט של מישהי אחרת.
+              <br />
+              <span className="text-rose-600 font-semibold">Mesh מזהה את הבגדים שבתמונה ומציגה לך איפה למצוא אותם</span> — בדיוק, או פריטים דומים — ממאות אתרי אופנה.
+              <br />
+              הכל במקום אחד, במהירות ובסטייל.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {[
-              {
-                step: "01",
-                icon: Camera,
-                title: "צלמי צילום מסך",
-                description: "ראית אאוטפיט שאהבת ב-TikTok או Instagram? פשוט צלמי צילום מסך"
-              },
-              {
-                step: "02",
-                icon: Sparkles,
-                title: "AI מוצא בשבילך",
-                description: "הטכנולוגיה שלנו מזהה את הפריט ומוצאת אותו או דומים לו"
-              },
-              {
-                step: "03",
-                icon: ShoppingBag,
-                title: "קני בקליק",
-                description: "עברי ישירות לרכישה או שמרי לארון הווירטואלי שלך"
-              }
-            ].map((item, index) => (
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
+            {howItWorks.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="text-center"
               >
-                <Card className="p-8 sm:p-10 text-center hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-rose-200 h-full">
-                  <div className="mb-8 flex justify-center">
-                    <div className="relative">
-                      <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-rose-100 to-pink-100 rounded-full flex items-center justify-center">
-                        <item.icon className="w-12 h-12 sm:w-14 sm:h-14 text-rose-600" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        {item.step}
-                      </div>
-                    </div>
+                <div className="relative mb-8 inline-block">
+                  <div className="w-32 h-32 bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl flex items-center justify-center">
+                    <span className="text-6xl">{step.emoji}</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-5">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    {item.description}
-                  </p>
-                </Card>
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-rose-600 rounded-full text-white flex items-center justify-center font-bold text-lg">
+                    {index + 1}
+                  </div>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20 sm:py-28 px-6 bg-gradient-to-b from-rose-50/50 to-white">
+      {/* Why Mesh Section */}
+      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-pink-50/30 to-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 sm:mb-20"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 px-4">
-              כל מה שצריך במקום אחד
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              למה לבחור ב-Mesh?
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 px-4 leading-relaxed">
-              חיפוש חזותי AI + תוכן משפיענים + אינטראקציה חברתית
-            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {features.map((feature, index) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyMesh.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -405,19 +250,17 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-rose-200 h-full">
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-7 h-7 sm:w-8 sm:h-8 text-rose-600" />
+                <Card className="p-8 h-full hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-rose-200 bg-white">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <span className="text-4xl">{feature.emoji}</span>
                     </div>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                      {feature.title}
+                    </h3>
+                    <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
                 </Card>
               </motion.div>
@@ -426,46 +269,106 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-20 sm:py-28 px-6 bg-gradient-to-b from-white to-rose-50/50">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* Demo/Mockup Section */}
+      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-white to-pink-50/30">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <div className="flex justify-center gap-2 mb-8">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-8 h-8 sm:w-10 sm:h-10 fill-rose-500 text-rose-500" />
-              ))}
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 px-4">
-              &ldquo;סוף סוף פתרון לבעיה שהכי ציקה לי!&rdquo;
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              זה נראה בערך ככה 👇
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 px-4">
-              הצטרפי לעשרות נשים שכבר נרשמו לרשימת ההמתנה
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              הצצה למסך הראשי של Mesh — חיפוש לפי תמונה, תוצאות חכמות, ומראה עדכני שנראה כמו אינסטגרם של בגדים.
             </p>
-            <div className="grid sm:grid-cols-3 gap-10 sm:gap-12 mt-16">
-              {[
-                { icon: TrendingUp, text: "שוק של $380B בארה&ldquo;ב" },
-                { icon: Users, text: "150M קוניות דיגיטליות" },
-                { icon: Sparkles, text: "טכנולוגיית AI מתקדמת" }
-              ].map((item, index) => (
-                <div key={index} className="flex flex-col items-center gap-4">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <item.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative">
+              {/* Phone mockup container */}
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-4 shadow-2xl">
+                <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19] relative">
+                  {/* Mock app interface */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-pink-50 to-white p-6">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="text-2xl font-bold text-gray-900">MESH</div>
+                      <div className="flex gap-2">
+                        <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
+                          <Search className="w-5 h-5 text-rose-600" />
+                        </div>
+                        <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
+                          <Heart className="w-5 h-5 text-rose-600" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Upload area */}
+                    <div className="bg-white rounded-2xl border-2 border-dashed border-rose-200 p-8 mb-6 text-center">
+                      <Upload className="w-12 h-12 text-rose-600 mx-auto mb-4" />
+                      <p className="text-gray-700 font-semibold">העלי תמונה</p>
+                      <p className="text-sm text-gray-500 mt-2">או צלמי ישירות</p>
+                    </div>
+
+                    {/* Sample results */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {[1, 2, 3, 4].map((item) => (
+                        <div key={item} className="bg-gray-100 rounded-xl aspect-square" />
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-gray-800 font-semibold text-lg sm:text-xl">{item.text}</p>
                 </div>
-              ))}
+              </div>
+
+              {/* Floating elements */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 hidden lg:block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <Sparkles className="w-6 h-6 text-rose-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-gray-900">חיפוש חכם</div>
+                    <div className="text-xs text-gray-500">AI מתקדם</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 hidden lg:block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <Users className="w-6 h-6 text-rose-600" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-gray-900">קהילתי</div>
+                    <div className="text-xs text-gray-500">50+ משתמשות</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 sm:py-28 px-6 bg-gradient-to-br from-rose-600 via-rose-700 to-pink-700">
+      {/* Final CTA Section */}
+      <section id="waitlist-section" className="py-20 sm:py-32 px-6 bg-gray-900 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -473,47 +376,85 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 px-4 leading-tight">
-              מוכנה לשנות את הדרך שבה את קונה אופנה?
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 px-4 leading-tight">
+              האופנה החדשה מתחילה כאן.
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-rose-100 mb-12 px-4">
-              הצטרפי לרשימת ההמתנה וקבלי גישה מוקדמת
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-12 px-4 leading-relaxed max-w-4xl mx-auto">
+              הצטרפי עכשיו למאות בנות שכבר נרשמו לרשימת ההמתנה ל-Mesh.
+              <br />
+              <span className="text-rose-400 font-semibold">גלי, השווי, שתפי — ואל תפספסי אף לוק.</span>
             </p>
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-12">
               <div className="flex flex-col sm:flex-row gap-4 items-stretch">
                 <Input
                   type="email"
                   placeholder="הכניסי את המייל שלך"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-16 text-lg sm:text-xl px-8 rounded-full border-2 border-white/20 bg-white/10 text-white placeholder:text-rose-200 text-right"
+                  className="flex-1 h-16 text-lg sm:text-xl px-8 rounded-full border-2 border-gray-700 bg-gray-800 text-white placeholder:text-gray-500 text-right focus:border-rose-500"
                   required
                   dir="rtl"
                 />
                 <Button
                   type="submit"
-                  className="h-16 px-10 sm:px-12 bg-white hover:bg-gray-100 text-rose-700 rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 whitespace-nowrap"
+                  className="h-16 px-10 sm:px-12 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-rose-500/50 transition-all duration-300 whitespace-nowrap flex items-center gap-3 justify-center"
                 >
-                  הצטרפי עכשיו
+                  <span className="text-2xl">🌸</span>
+                  נסי את Mesh עכשיו
                 </Button>
               </div>
             </form>
+
+            {isSubmitted && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-8 text-green-400 flex items-center justify-center gap-2 text-lg"
+              >
+                <CheckCircle className="w-6 h-6" />
+                <span>תודה! נעדכן אותך בקרוב 💕</span>
+              </motion.div>
+            )}
+
+            <div className="flex flex-wrap justify-center gap-8 text-gray-400 text-sm sm:text-base">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-rose-500" />
+                <span>ללא התחייבות</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-rose-500" />
+                <span>גישה מוקדמת</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-rose-500" />
+                <span>עדכונים בלבד</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-l from-rose-400 to-pink-400 bg-clip-text text-transparent">
-            MESH
-          </h3>
-          <p className="text-gray-400 text-lg sm:text-xl mb-8">
-            פלטפורמת גילוי אופנה מבוססת AI
-          </p>
-          <p className="text-gray-500 text-sm sm:text-base">
-            © 2025 MESH. כל הזכויות שמורות.
-          </p>
+      <footer className="py-16 px-6 bg-black text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl sm:text-5xl font-bold mb-4">
+              MESH
+            </h3>
+            <div className="w-16 h-1 bg-rose-600 mx-auto rounded-full mb-8" />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8 mb-12 text-gray-400">
+            <a href="#" className="hover:text-white transition-colors">אודות</a>
+            <a href="#" className="hover:text-white transition-colors">יצירת קשר</a>
+            <a href="#" className="hover:text-white transition-colors">תנאי שימוש</a>
+            <a href="#" className="hover:text-white transition-colors">מדיניות פרטיות</a>
+          </div>
+
+          <div className="text-center text-gray-500 text-sm">
+            © 2025 Mesh – כל הזכויות שמורות.
+          </div>
         </div>
       </footer>
     </div>
