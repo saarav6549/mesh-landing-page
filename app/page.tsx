@@ -239,7 +239,7 @@ export default function Home() {
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">הדרך הישנה</h3>
                 </div>
                 <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
-                  הקלדת "שמלת קורסט אדומה מסאטן" מניבה תוצאות לא רלוונטיות וחיפושים נטושים
+                  הקלדת &ldquo;שמלת קורסט אדומה מסאטן&rdquo; מניבה תוצאות לא רלוונטיות וחיפושים נטושים
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-gray-600 text-base sm:text-lg">
@@ -441,14 +441,14 @@ export default function Home() {
               ))}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 px-4">
-              "סוף סוף פתרון לבעיה שהכי ציקה לי!"
+              &ldquo;סוף סוף פתרון לבעיה שהכי ציקה לי!&rdquo;
             </h2>
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 px-4">
               הצטרפי לעשרות נשים שכבר נרשמו לרשימת ההמתנה
             </p>
             <div className="grid sm:grid-cols-3 gap-10 sm:gap-12 mt-16">
               {[
-                { icon: TrendingUp, text: "שוק של $380B בארה\"ב" },
+                { icon: TrendingUp, text: "שוק של $380B בארה&ldquo;ב" },
                 { icon: Users, text: "150M קוניות דיגיטליות" },
                 { icon: Sparkles, text: "טכנולוגיית AI מתקדמת" }
               ].map((item, index) => (
