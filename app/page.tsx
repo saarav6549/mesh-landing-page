@@ -42,14 +42,14 @@ export default function Home() {
     {
       icon: Brain,
       emoji: "🧠",
-      title: "חכמה באמת",
+      title: " מערכת חכמה באמת",
       description: "מבוססת בינה מלאכותית שלומדת את הסטייל שלך"
     },
     {
       icon: Users,
       emoji: "👯‍♀️",
       title: "קהילתית",
-      description: "רואה מה אחרות אוהבות ולומדת מזה"
+      description: "שתפי לוקים וגלי שילובים שמתאימים לסטייל שלך"
     },
     {
       icon: Store,
@@ -108,9 +108,9 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight px-4"
             >
-              מצאי בגדים שאת אוהבת.
+              מצאי את הבגדים שאת אוהבת
               <br />
-              בדרך שאת אוהבת.
+              בדרך שאת אוהבת
             </motion.h2>
 
             <motion.p
@@ -119,7 +119,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-12 max-w-5xl mx-auto leading-relaxed px-4 font-light"
             >
-              Mesh היא הפלטפורמה הראשונה שמאפשרת לך לגלות בגדים לפי תמונה — ולראות איפה לקנות אותם, כמה הם עולים, ואיך הם נראים על אחרות.
+              Mesh היא הפלטפורמה הראשונה שמאפשרת לך למצוא בגדים לפי תמונה - לראות איפה לקנות אותם, כמה הם עולים, ואיך הם נראים על אחרות.
             </motion.p>
 
             {/* CTA Button */}
@@ -188,7 +188,7 @@ export default function Home() {
               איך זה עובד?
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              העלי תמונה של לוק שאהבת — שמלה, חולצה או אאוטפיט של מישהי אחרת.
+              העלי תמונה של לוק שאהבת - שמלה, חולצה או אאוטפיט שראית על מישהי אחרת.
               <br />
               <span className="text-rose-600 font-semibold">Mesh מזהה את הבגדים שבתמונה ומציגה לך איפה למצוא אותם</span> — בדיוק, או פריטים דומים — ממאות אתרי אופנה.
               <br />
