@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Upload, Search, ShoppingBag, Brain, Users, Store, MessageCircle, Heart, CheckCircle, Sparkles } from "lucide-react";
+import Image from "next/image";
+import queryImg from "@/assets/query.jpg";
+import topSuggestionImg from "@/assets/top_suggestion.jpg";
+import secondImg from "@/assets/2nd.jpg";
+import thirdImg from "@/assets/3rd.jpeg";
+import fourthImg from "@/assets/4th.jpg";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -313,17 +319,34 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Upload area */}
-                    <div className="bg-white rounded-2xl border-2 border-dashed border-rose-200 p-8 mb-6 text-center">
-                      <Upload className="w-12 h-12 text-rose-600 mx-auto mb-4" />
-                      <p className="text-gray-700 font-semibold">העלי תמונה</p>
-                      <p className="text-sm text-gray-500 mt-2">או צלמי ישירות</p>
+                    {/* Query image */}
+                    <div className="bg-white rounded-2xl border-2 border-rose-200 p-3 mb-4">
+                      <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+                        <Image src={queryImg} alt="תמונת החיפוש" fill className="object-cover" />
+                      </div>
+                      <div className="mt-3 flex items-center justify-between text-xs text-gray-600">
+                        <span className="font-semibold text-gray-900">תמונת החיפוש</span>
+                        <span className="text-rose-600 flex items-center gap-1"><Search className="w-3.5 h-3.5" /> נמצא 4 התאמות</span>
+                      </div>
                     </div>
 
-                    {/* Sample results */}
+                    {/* Results grid */}
                     <div className="grid grid-cols-2 gap-3">
-                      {[1, 2, 3, 4].map((item) => (
-                        <div key={item} className="bg-gray-100 rounded-xl aspect-square" />
+                      {[
+                        { img: topSuggestionImg, title: "הצעה מובילה", price: "₪189" },
+                        { img: secondImg, title: "דומה מאוד", price: "₪159" },
+                        { img: thirdImg, title: "דומה", price: "₪139" },
+                        { img: fourthImg, title: "בהשראה", price: "₪129" },
+                      ].map((card, idx) => (
+                        <div key={idx} className="relative rounded-xl overflow-hidden aspect-square bg-white">
+                          <Image src={card.img} alt={card.title} fill className="object-cover" />
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-white">
+                            <div className="flex items-center justify-between text-[11px]">
+                              <span className="font-semibold">{card.title}</span>
+                              <span className="bg-white/90 text-gray-900 rounded-full px-2 py-0.5 text-[10px]">{card.price}</span>
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
