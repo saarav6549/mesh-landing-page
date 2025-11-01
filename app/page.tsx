@@ -12,15 +12,33 @@ import topSuggestionImg from "@/assets/top_suggestion.jpg";
 import secondImg from "@/assets/2nd.jpg";
 import thirdImg from "@/assets/3rd.jpeg";
 import fourthImg from "@/assets/4th.jpg";
+import { db } from "@/lib/firebase";
+import { collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    const emailTrimmed = email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) return;
+
+    try {
+      const col = collection(db, "waitlist");
+      const id = emailTrimmed.replace(/[.#$/\[\]]/g, "_");
+      await setDoc(doc(col, id), {
+        email: emailTrimmed,
+        createdAt: serverTimestamp(),
+        source: "landingpage",
+      }, { merge: true });
+
+      setIsSubmitted(true);
+      setEmail("");
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err) {
+      console.error("waitlist save failed", err);
+    }
   };
 
   const howItWorks = [
