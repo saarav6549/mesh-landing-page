@@ -7,11 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Upload, Search, ShoppingBag, Brain, Users, Store, MessageCircle, Heart, CheckCircle, Sparkles, Wand2, Sparkle, ShoppingCart, Image as ImageIcon, Camera } from "lucide-react";
 import Image from "next/image";
-import queryImg from "@/assets/query.jpg";
-import topSuggestionImg from "@/assets/top_suggestion.jpg";
-import secondImg from "@/assets/2nd.jpg";
-import thirdImg from "@/assets/3rd.jpeg";
-import fourthImg from "@/assets/4th.jpg";
+import queryImg from "@/assets/query.png";
+import topSuggestionImg from "@/assets/top_suggestion.png";
+import secondImg from "@/assets/2nd.png";
+import thirdImg from "@/assets/3rd.png";
+import fourthImg from "@/assets/4th.png";
 import { db } from "@/lib/firebase";
 import { collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
 
@@ -78,7 +78,7 @@ export default function Home() {
     {
       icon: MessageCircle,
       title: "קהילה פעילה",
-      description: "כל פריט מקבל תגובות, שיתופים ודעות אמיתיות מנשים כמוך"
+      description: "כל פריט מקבל תגובות, שיתופים ודעות אמיתיות ממשתמשות נוספות"
     }
   ];
 
@@ -178,9 +178,9 @@ export default function Home() {
                 onClick={() => document.getElementById('waitlist-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="h-14 sm:h-16 px-8 sm:px-10 md:px-12 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-700 hover:to-rose-800 text-white rounded-full text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-rose-500/40 transition-all duration-300 flex items-center gap-3 group"
               >
-                <Camera className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
-                <span>נסי את Mesh עכשיו</span>
-                <Heart className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                <Heart className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                <span>הצטרפי לרשימת ההמתנה</span>
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
               </Button>
             </motion.div>
           </motion.div>
@@ -217,7 +217,7 @@ export default function Home() {
               איך זה עובד?
             </h2>
             <p className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-              העלי תמונה של לוק שאהבת — שמלה, חולצה או אאוטפיט שראית על מישהי אחרת.
+              העלי תמונה של לוק שאהבת - שמלה, חולצה או אאוטפיט שראית על מישהי אחרת.
               <br />
               <span className="text-rose-600 font-medium">Mesh מזהה את הבגדים שבתמונה ומציגה לך איפה למצוא אותם</span> — בדיוק, או פריטים דומים — ממאות אתרי אופנה.
               <br />
@@ -312,7 +312,7 @@ export default function Home() {
               זה נראה בערך ככה 👇
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              הצצה למסך הראשי של Mesh — חיפוש לפי תמונה, תוצאות חכמות, ומראה עדכני שנראה כמו אינסטגרם של בגדים.
+              הצצה למסך החיפוש של Mesh - חיפוש לפי תמונה, תוצאות חכמות, ומראה עדכני שתמיד יציג לך פיד מותאם אישית של בגדים.
             </p>
           </motion.div>
 
@@ -446,8 +446,9 @@ export default function Home() {
                   type="submit"
                   className="h-16 px-10 sm:px-12 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-rose-500/50 transition-all duration-300 whitespace-nowrap flex items-center gap-3 justify-center"
                 >
-                  <span className="text-2xl">🌸</span>
-                  נסי את Mesh עכשיו
+                  <Heart className="w-5 h-5" />
+                  הצטרפי לרשימת ההמתנה
+                  <Sparkles className="w-5 h-5" />
                 </Button>
               </div>
             </form>
