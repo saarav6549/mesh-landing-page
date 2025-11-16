@@ -83,7 +83,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100" dir="rtl">
       <style jsx global>{`
         * {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -91,11 +91,12 @@ export default function Home() {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20 bg-gradient-to-b from-white via-rose-50/20 to-pink-50/30">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20 bg-gradient-to-br from-rose-50 via-pink-50/90 to-rose-100/80">
         {/* Background decoration - Premium gradient */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-rose-100/30 via-pink-100/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-pink-100/25 via-rose-50/15 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-rose-200/40 via-pink-200/30 to-rose-300/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-pink-200/35 via-rose-200/25 to-pink-300/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-rose-300/20 via-pink-200/15 to-rose-200/20 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 w-full">
@@ -129,33 +130,23 @@ export default function Home() {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gray-900 mb-3">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-3 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">
                 MESH
               </h1>
               <div className="w-20 h-1 bg-rose-600 mx-auto rounded-full" />
             </motion.div>
 
-            {/* Opening Line - Premium typography */}
+            {/* Opening Line - Value proposition */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-gray-500 mb-4 sm:mb-5 font-light tracking-[0.15em] uppercase"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 mb-6 sm:mb-8 font-semibold leading-relaxed px-4 max-w-5xl mx-auto"
             >
-              גילוי אופנה חכם
-            </motion.p>
-
-            {/* Main Headline - Clear hierarchy */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 sm:mb-6 leading-[1.1] px-4"
-            >
-              מצאי את הבגדים שאת אוהבת
+              MESH מזהה את הבגדים שבתמונה ומציגה לך הצעות ממאות אתרי אופנה.
               <br />
-              <span className="text-rose-600">בדרך שאת אוהבת</span>
-            </motion.h2>
+              <span className="text-rose-600 font-bold">הכל במקום אחד, במהירות ובסטייל.</span>
+            </motion.p>
 
             {/* Short Tagline - Minimalist */}
             <motion.p
@@ -204,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 sm:py-32 px-6 bg-white">
+      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-rose-50/80 via-pink-50/90 to-rose-100/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -220,8 +211,7 @@ export default function Home() {
               העלי תמונה של לוק שאהבת - שמלה, חולצה או אאוטפיט שראית על מישהי אחרת.
               <br />
               <span className="text-rose-600 font-medium">Mesh מזהה את הבגדים שבתמונה ומציגה לך איפה למצוא אותם</span> — בדיוק, או פריטים דומים — ממאות אתרי אופנה.
-              <br />
-              הכל במקום אחד, במהירות ובסטייל.
+              
             </p>
           </motion.div>
 
@@ -256,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* Why Mesh Section */}
-      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-pink-50/30 to-white">
+      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-rose-100/60 via-pink-50/80 to-rose-50/90">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -279,7 +269,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-rose-200 bg-white group">
+                <Card className="p-8 h-full hover:shadow-2xl transition-all duration-300 border border-rose-200/50 hover:border-rose-300 bg-gradient-to-br from-white/90 via-rose-50/80 to-pink-50/90 backdrop-blur-sm group">
                   <div className="text-center">
                     <div className="w-20 h-20 bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-md shadow-rose-50/50 group-hover:shadow-lg group-hover:shadow-rose-100/50 transition-all duration-300 border border-rose-100/50">
                       <feature.icon className="w-10 h-10 text-rose-600 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
@@ -299,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* Demo/Mockup Section */}
-      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-white to-pink-50/30">
+      <section className="py-20 sm:py-32 px-6 bg-gradient-to-b from-rose-50/90 via-pink-50/70 to-rose-100/80">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -328,7 +318,7 @@ export default function Home() {
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-4 shadow-2xl">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19] relative">
                   {/* Mock app interface */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-50 to-white p-6">
+                  <div className="absolute inset-0 bg-gradient-to-b from-rose-50 via-pink-50 to-rose-100/80 p-6">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-8">
                       <div className="text-2xl font-bold text-gray-900">MESH</div>
@@ -343,7 +333,7 @@ export default function Home() {
                     </div>
 
                     {/* Query image */}
-                    <div className="bg-white rounded-2xl border-2 border-rose-200 p-3 mb-4">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl border-2 border-rose-200 p-3 mb-4 shadow-lg">
                       <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                         <Image src={queryImg} alt="תמונת החיפוש" fill className="object-cover" />
                       </div>
@@ -361,7 +351,7 @@ export default function Home() {
                         { img: thirdImg, title: "דומה", price: "₪139" },
                         { img: fourthImg, title: "בהשראה", price: "₪129" },
                       ].map((card, idx) => (
-                        <div key={idx} className="relative rounded-xl overflow-hidden aspect-square bg-white">
+                        <div key={idx} className="relative rounded-xl overflow-hidden aspect-square bg-white/95 backdrop-blur-sm shadow-md">
                           <Image src={card.img} alt={card.title} fill className="object-cover" />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-white">
                             <div className="flex items-center justify-between text-[11px]">
@@ -380,7 +370,7 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 hidden lg:block"
+                className="absolute -top-6 -right-6 bg-gradient-to-br from-white/95 via-rose-50/90 to-pink-50/95 backdrop-blur-sm rounded-2xl shadow-xl border border-rose-200/50 p-4 hidden lg:block"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
@@ -396,7 +386,7 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 hidden lg:block"
+                className="absolute -bottom-6 -left-6 bg-gradient-to-br from-white/95 via-rose-50/90 to-pink-50/95 backdrop-blur-sm rounded-2xl shadow-xl border border-rose-200/50 p-4 hidden lg:block"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
@@ -423,12 +413,12 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 px-4 leading-tight">
-              האופנה החדשה מתחילה כאן.
+              עידן חדש של חיפוש ויזואלי ומותאם אישית.
             </h2>
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-12 px-4 leading-relaxed max-w-4xl mx-auto">
               הצטרפי עכשיו למאות בנות שכבר נרשמו לרשימת ההמתנה ל-Mesh.
               <br />
-              <span className="text-rose-400 font-semibold">גלי, השווי, שתפי — ואל תפספסי אף לוק.</span>
+              <span className="text-rose-400 font-semibold">גלי, השווי, שתפי - ואל תפספסי אף לוק.</span>
             </p>
 
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-12">
